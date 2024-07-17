@@ -1,5 +1,5 @@
 name: Generate, Sign, and Commit SBOM
-#test
+
 on:
   push:
     branches:
@@ -74,5 +74,6 @@ jobs:
 
       - name: Run vulnerability analysis
         run: |
+          grype db update # HERE GOT CHANGES
           grype sbom:log4shell-vulnerable-app-SPDX.json -o table
           grype sbom:log4shell-vulnerable-app-SPDX.json
