@@ -23,7 +23,7 @@ jobs:
           syft . -o spdx-json=log4shell-vulnerable-app-SPDX.json
 
       - name: Upload SBOM as an artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: SBOM
           path: log4shell-vulnerable-app-SPDX.json
